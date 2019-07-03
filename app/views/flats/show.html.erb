@@ -1,0 +1,25 @@
+<div class="card bg-light mb-3 w-75 mt-3">
+  <%= image_tag("back.jpeg", class: "card-img-top", height: '300') %>
+  <div class="card-body">
+    <h1 class="card-title"><%= @flat.name %></h1>
+    <p class="card-text"><%= @flat.address %></p>
+  </div>
+</div>
+
+<div class="card bg-light mb-3 w-75 mt-3">
+  <div class="card-body">
+    <h2 class="card-title">A bit more about this flat...</h2>
+    <p class="card-text"><%= @flat.description %></p>
+  </div>
+</div>
+
+<div class="card bg-light mb-3 w-75 mt-3">
+  <div class="card-body">
+    <h2 class="card-title">Details</h2>
+    <div class="d-flex flex-row p-2">
+      <p class="mr-3"><i class="small material-icons">people</i> <%= @flat.number_of_guests %></p>
+      <p>€ <%= @flat.price_per_night %></p>
+    </div>
+  </div>
+</div>
+

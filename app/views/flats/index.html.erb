@@ -1,0 +1,29 @@
+<h1>Available Flats</h1>
+<div class="row">
+  <% i = 1 %>
+<% @flats.each do |flat| %>
+<div class="col-12 col-md-6 col-xl-4">
+  <div class="card bg-light mb-3" style="width: 24rem; height: 30rem;">
+    <div class="card-body">
+      <%= image_tag("img#{i}.jpeg", class: "card-img-top mb-3") %>
+      <h5 class="card-title"><%= flat.name %></h5>
+      <p><%= flat.address %></p>
+      <div class="d-flex flex-row p-2">
+        <p><i class="small material-icons">people</i> <%= flat.number_of_guests %></p>
+        <p>€ <%= flat.price_per_night %></p>
+      </div>
+      <div class="card-body">
+        <%= link_to "More info", flat_path(flat) %>
+        <%= link_to "Edit", edit_flat_path(flat) %>
+        <%= link_to "Delete", flat_path(flat),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+  </div>
+</div>
+<% if i < 5 %>
+  <% i +=1 %>
+<% end %>
+<% end %>
+</div>
